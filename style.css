@@ -1,0 +1,116 @@
+/* ============================================================
+   Anna French — site styles
+   Colors live here; change a hex code once and it updates everywhere.
+   ============================================================ */
+:root{
+  --bg:#FAFAF8;          /* page background (soft off-white) */
+  --surface:#FFFFFF;     /* top bar */
+  --text:#1F2328;        /* body text */
+  --title:#1E2328;       /* names and titles */
+  --muted:#5A636D;       /* dates, captions, small text */
+  --accent:#34495E;      /* slate blue: links, buttons, labels */
+  --accent-hover:#1F2F3F;
+  --tint:#EEF1F4;        /* highlighted sections */
+  --rule:#E3E6EA;        /* thin divider lines */
+  --icon:#3D4550;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);
+  font-family:Inter,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+a:hover{color:var(--accent-hover);border-bottom-color:currentColor}
+img{max-width:100%}
+
+/* ---------- top navigation ---------- */
+header{position:sticky;top:0;background:var(--surface);box-shadow:0 1px 6px rgba(0,0,0,.07);z-index:10}
+.nav{max-width:1120px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:600;color:var(--title);font-size:18px;border:0}
+.brand:hover{color:var(--title);border:0}
+.nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0}
+.nav ul a{color:var(--icon);font-size:16px;border:0}
+.nav ul a:hover{color:var(--accent)}
+.nav ul a.active{color:var(--accent);font-weight:600}
+
+main{max-width:1120px;margin:0 auto;padding:72px 24px 48px}
+
+/* ---------- home: profile + bio ---------- */
+.hero{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start}
+.profile{text-align:center}
+.profile img{width:240px;height:240px;border-radius:8px;object-fit:cover;display:block;margin:0 auto 22px;
+  box-shadow:0 2px 12px rgba(30,25,20,.14)}
+.profile h1{font-size:28px;line-height:1.25;margin:0 0 6px;color:var(--title);font-weight:700;letter-spacing:-.01em}
+.profile .role{color:var(--muted);font-size:16px;line-height:1.5;margin:0}
+.links{display:flex;justify-content:center;gap:18px;margin-top:22px}
+.links a{display:inline-flex;align-items:center;gap:6px;color:var(--icon);font-size:14px;font-weight:600;border:0}
+.links a:hover{color:var(--accent);border:0}
+.links svg{width:22px;height:22px}
+
+.bio p{margin:0 0 20px}
+.bio strong{font-weight:600;color:var(--title)}
+
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+.label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+.meta ul{margin:0;padding-left:20px}
+.meta li{margin-bottom:4px}
+.edu{list-style:none;padding:0 !important}
+.edu li{display:grid;grid-template-columns:28px 1fr;margin-bottom:12px;line-height:1.45}
+.edu svg{width:20px;height:20px;margin-top:3px;color:var(--icon)}
+.edu small{display:block;color:var(--muted);font-size:14.5px}
+
+/* ---------- highlighted block (JMP) ---------- */
+.feature{margin-top:64px;background:var(--tint);border-radius:10px;padding:36px 40px}
+.feature .label{color:var(--accent);margin-bottom:8px}
+.feature h2{font-size:22px;line-height:1.35;margin:0 0 14px;color:var(--title);font-weight:700}
+.feature p{margin:0 0 20px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 16px;border-radius:6px;
+  font-weight:600;font-size:14.5px;line-height:1.5;border:0;margin:0 8px 8px 0}
+.btn:hover{background:var(--accent-hover);color:#fff;border:0}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.btn.ghost:hover{background:var(--accent);color:#fff}
+
+/* ---------- inner pages (research, teaching) ---------- */
+.page{max-width:860px}
+.page h1{font-size:34px;line-height:1.2;margin:0 0 36px;color:var(--title);font-weight:700;letter-spacing:-.01em}
+.page h2.section{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;
+  margin:48px 0 20px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.page h2.section:first-of-type{margin-top:0}
+.paper{margin-bottom:36px}
+.paper.jmp{background:var(--tint);border-radius:10px;padding:28px 32px}
+.paper h3{font-size:20px;line-height:1.4;margin:0 0 4px;color:var(--title);font-weight:700}
+.paper .status{color:var(--muted);font-size:15px;margin:0 0 12px}
+.paper .status .tag{color:var(--accent);font-weight:600}
+.paper p.abstract{margin:0 0 14px}
+details summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15px;margin-bottom:10px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+ ";font-weight:700}
+details[open] summary::before{content:"– "}
+
+.entry{display:flex;justify-content:space-between;gap:24px;margin-bottom:22px}
+.entry h3{font-size:18px;margin:0;color:var(--title);font-weight:600}
+.entry p{margin:2px 0 0}
+.entry ul.courses{margin:6px 0 0;padding-left:20px}
+.entry .when{color:var(--muted);white-space:nowrap;font-size:15px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);margin-top:24px}
+footer div{max-width:1120px;margin:0 auto;padding:22px 24px;color:var(--muted);font-size:14px}
+
+/* ---------- phones and small tablets ---------- */
+@media (max-width:820px){
+  main{padding:40px 16px 32px}
+  .nav{padding:0 16px}
+  .nav ul{gap:18px}
+  .hero{grid-template-columns:1fr;gap:32px}
+  .profile img{width:180px;height:180px}
+  .meta{grid-template-columns:1fr;gap:24px}
+  .feature{padding:26px 22px;margin-top:40px}
+  .paper.jmp{padding:22px 20px}
+  .page h1{font-size:28px}
+  .entry{flex-direction:column;gap:0}
+}
+@media (max-width:400px){ .nav ul{gap:14px} .brand{font-size:16px} }
